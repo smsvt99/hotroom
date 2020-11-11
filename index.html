@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Room</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <h1>My Appartment is Hot</h1>
+    <h2>A study by Sean Stone</h2>
+    <div id="svgRoot">
+    </div>
+    <div id="text">
+
+    <h4>Tech</h4>
+    <p>Two Node.js applications power this project. The first runs on a raspberry pi computer which sits on my countertop and saves temperature data to a Mongo database in the cloud at 20 minute intervals. The indoor temperature is taken with a <a href="https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf">DS18B20 digital thermometer.</a> The outdoor data is fetched from the <a href="https://openweathermap.org/api">Open Weather Map API</a>. The second Node.js application exposes a simple, read-only API to serve the temperature data from the database as JSON, and also serves this page. The SVGs are made with d3.js. Check it out on github.</p>
+</div>
+
+
+
+    <script src="/node_modules/d3/dist/d3.js"></script>
+    <script src="/node_modules/d3-collection/dist/d3-collection.js"></script>
+    <script src="/index.js"></script>
+</body>
+</html>
