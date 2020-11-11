@@ -1,12 +1,14 @@
-document.addEventListener("DOMContentLoaded", async ()=>{
+let globalData;
+
+async function getData(){
     try{
         let data = await fetch('/data');
-        data = await data.json()
-        drawChart(data);
+        data = await data.json();
+        return data;
     } catch (e) { 
         console.log(e);
     }
-})
+}
 
 function drawChart(data){
   const allTemps = [
@@ -16,8 +18,8 @@ function drawChart(data){
 
   // set the dimensions and margins of the graph
   var margin = { top: 100, right: 100, bottom: 100, left: 100 },
-    width = window.innerWidth - margin.left - margin.right - 100,
-    height = window.innerHeight - margin.top - margin.bottom - 100;
+    width = window.innerWidth - margin.left - margin.right -50 ,
+    height = window.innerHeight - margin.top - margin.bottom;
 
   // append the svg object to the body of the page
   var svg = d3
@@ -93,7 +95,7 @@ function drawChart(data){
     .attr("stroke", function (d) {
       return myColor(d.name);
     })
-    .style("stroke-width", 4)
+    .style("stroke-width", 3)
     .style("fill", "none");
 
 
@@ -151,14 +153,14 @@ svg.append("text")
     .attr("cy", function (d) {
       return y(d.value);
     })
-    .attr("r", 4)
+    .attr("r", 5)
     .attr("stroke", "white")
     .on("mouseover", function(d,i) {
         div.transition()		
             .style("opacity", .9);		
         div.html(getTooltipText(i))	
-            .style("left", (d.pageX - 100) + "px")		
-            .style("top", (d.pageY - 50) + "px");	
+            .style("left", (d.pageX - 75) + "px")		
+            .style("top", (d.pageY - 75) + "px");	
         })					
     .on("mouseout", function(d) {		
         div.transition()			
@@ -176,7 +178,7 @@ svg.append("text")
         const C = data.value + "°C"
         const F = (data.value * 1.8 + 32).toFixed(2) + "°F"
 
-        return `${dateStr}<br/>${timeStr}<br/>${C}<br/>(${F})`
+        return `${dateStr}, ${timeStr}<hr/>${C} (${F})`
     }
 
   // Add a legend at the end of each line
@@ -224,4 +226,10 @@ svg.append("text")
   .attr("x", width/2)  
 }
 
+(async function init(){
+    data = await getData();
+    globalData = data;
+    localData = globalData.filter((obj, i) => i % 3 === 0)
+    drawChart(localData);
+})();
 

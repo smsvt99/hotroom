@@ -112,13 +112,15 @@ div.tooltip {
     position: absolute;			
     padding: 5px;				
     background: white;	
-    border: 1px solid grey;		
+    border: 1px solid black;		
     border-radius: 2px;			
     pointer-events: none;
+    box-shadow: 2px 2px 2px grey;
+    text-align: center;
 }
 
 circle:hover{
-    fill: white;
+    fill: black;
     cursor: pointer;
 }
 
