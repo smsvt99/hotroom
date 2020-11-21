@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
+ u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
@@ -56,7 +56,7 @@ body {
 div#svgRoot{
     border: 1px solid grey;
     margin: auto;
-    background-color: white;
+    background-color: whitesmoke;
 }
 div#text{
     margin: auto;
@@ -83,6 +83,10 @@ h4{
     font-size: 30px;
 }
 
+h5{
+    margin: 5px;
+}
+
 p, blockquote{
     margin-top: 10px;
     margin-bottom: 10px;
@@ -97,7 +101,7 @@ blockquote{
 }
 
 text{
-    text-align: center;
+    /* text-align: center; */
 }
 
 .tick{
@@ -124,6 +128,13 @@ circle:hover{
     cursor: pointer;
 }
 
-/* br{
-    padding: 5px;
-} */
+.row{
+    margin-top: 20px;
+}
+
+#controls{
+    border: 1px solid grey;
+    padding: 20px;
+    background-color: whitesmoke;
+    margin-top: 10px;
+}

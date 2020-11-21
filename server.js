@@ -11,7 +11,13 @@ app.get('/', (req, res) => {
 })
 
 app.get('/data', async (req, res) => {
-    const data = await db.getData();
+    let {start, end, grade} = req.query;
+    
+    start = start === undefined ? 0          : parseInt(start);
+    end   = end   === undefined ? Date.now() : parseInt(end);
+    grade = grade === undefined ? 1          : parseInt(grade);
+
+    const data = await db.getData(start, end, grade);
     res.json(data);
 })
 

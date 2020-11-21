@@ -10,12 +10,35 @@
 <body>
     <h1>My Appartment is Hot</h1>
     <h2>A study by Sean Stone</h2>
-    <div id="svgRoot">
-    </div>
+    <div id="svgRoot"></div>
+    
     <div id="text">
-    <h4>Tech</h4>
-    <p>Two Node.js applications power this project. The first runs on a raspberry pi computer which sits on my countertop and saves temperature data to a Mongo database in the cloud at 20 minute intervals. The indoor temperature is taken with a <a href="https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf">DS18B20 digital thermometer.</a> The outdoor data is fetched from the <a href="https://openweathermap.org/api">Open Weather Map API</a>. The second Node.js application exposes a simple, read-only API to serve the temperature data from the database as JSON, and also serves this page. The SVGs are made with d3.js. Check it out on <a href="https://github.com/smsvt99/hotroom">github</a>.</p>
-</div>
+        <h4>Filter</h4>
+        
+        <div id="controls">
+            <div class="row">
+                <h5>Start Date</h5>
+                <input id="start" type="datetime-local"><button id="clearStart">Clear</button>
+            </div>
+            
+            <div class="row">
+                <h5>End Date</h5>
+                <input id="end" type="datetime-local"><button id="clearEnd">Clear</button>
+            </div>
+            
+            <div class="row">
+                <h5>Interval</h5>
+                <input id="grade" type="number"><span> x 20 minutes</span>
+            </div>
+            <div class="row">
+                <button id="submit">Filter</button>
+            </div>
+        </div>
+        <h4>About</h4>
+        <p>When the season turns, the property management of my appartment disables the air conditioning and we are left with only our windows to cool our rooms. This seems reasonable, particularly for November in northern New England. Yet on November 7th, 2020, the night on which this project began, I recorded the mild outside temperature of 11.1°C (52°F) and the absurd inside temperature of 27.8°C (82°F) with my <b>windows wide open</b>. Although I found this uncomfortable and frustrating, it also struck me as amazing and worth recording, so I stopped trying to sleep and built this instead. You can see the data for those remarkably hot days <a href="/?start=1604808000000&end=1605240000000&grade=3&">here</a>.  </p>
+        <h4>Tech</h4>
+        <p>Two Node.js applications power this project. The first runs on a raspberry pi computer which sits on my countertop and saves temperature data to a Mongo database in the cloud at 20 minute intervals. The indoor temperature is taken with a <a href="https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf">DS18B20 digital thermometer.</a> The outdoor data is fetched from the <a href="https://openweathermap.org/api">Open Weather Map API</a>. The second Node.js application, hosted on Heroku, exposes a simple, read-only API to serve the temperature data from the database as JSON and this page to consume it. The SVGs are made with d3.js. Check it out on <a href="https://github.com/smsvt99/hotroom">github</a>.</p>
+    </div>
 
 
 
