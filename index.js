@@ -402,6 +402,7 @@ function syncInputs() {
   const endPoint = getEndpoint();
   data = await getData(endPoint);
   drawChart(data);
+  d3.select("body").style("opacity", 1);
 })();
 
 window.addEventListener("resize", () => {

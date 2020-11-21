@@ -52,6 +52,8 @@ body {
     padding: 20px;
     font-family: 'Quicksand', sans-serif;
     background-color: gainsboro;
+    opacity: 0;
+    transition: opacity .5s;
 }
 div#svgRoot{
     border: 1px solid grey;
@@ -137,4 +139,8 @@ circle:hover{
     padding: 20px;
     background-color: whitesmoke;
     margin-top: 10px;
+}
+
+html{
+    background: url("https://miro.medium.com/max/441/1*9EBHIOzhE1XfMYoKz1JcsQ.gif") no-repeat fixed center;
 }
